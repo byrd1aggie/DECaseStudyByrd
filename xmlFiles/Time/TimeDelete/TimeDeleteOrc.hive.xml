@@ -1,0 +1,12 @@
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode= nonstrict;
+CREATE TABLE IF NOT EXISTS
+CDW_SAPP_D_TIME
+(
+TIMEID string, 
+DAY int, 
+MONTH int, 
+QUARTER string
+)
+partitioned by (YEAR string)
+STORED AS ORC;

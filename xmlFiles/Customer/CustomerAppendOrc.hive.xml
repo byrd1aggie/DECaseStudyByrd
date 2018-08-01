@@ -1,0 +1,19 @@
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode= nonstrict;
+CREATE TABLE IF NOT EXISTS CDW_SAPP_D_CUSTOMER
+(
+CUST_SSN int,
+CUST_F_NAME string,
+CUST_M_NAME string,
+CUST_L_NAME string,
+CUST_CC_NO int,
+CUST_STREET string,
+CUST_CITY string,
+CUST_STATE string,
+CUST_COUNTRY string,
+CUST_ZIP int,
+CUST_PHONE string,
+CUST_EMAIL string
+)
+partitioned by (LAST_UPDATED string)
+STORED AS ORC;

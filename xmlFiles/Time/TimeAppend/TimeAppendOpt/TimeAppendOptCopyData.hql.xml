@@ -1,0 +1,10 @@
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode= nonstrict;
+INSERT INTO table CDW_SAPP_D_TIME partition (YEAR)
+SELECT
+TIMEID, 
+DAY, 
+MONTH, 
+QUARTER,
+YEAR
+from external_CDW_SAPP_D_TIME;
