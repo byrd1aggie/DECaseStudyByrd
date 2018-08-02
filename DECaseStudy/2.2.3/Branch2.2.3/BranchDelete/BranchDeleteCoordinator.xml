@@ -1,0 +1,16 @@
+<coordinator-app xmlns="uri:oozie:coordinator:0.2" name="BranchDeleteCoordinator" frequency= "20 8-17 * * 2-6" start="2018-04-02T08:00Z" end="2018-05-29T17:00Z" timezone="America/Chicago" >
+   
+   <controls>
+      <timeout>1</timeout>
+      <concurrency>1</concurrency>
+      <execution>FIFO</execution>
+      <throttle>1</throttle>
+   </controls>
+   
+   <action>
+      <workflow>
+         <app-path>${nameNode}/user/maria_dev/Credit_Card_System/oozie_Credit_Card/BranchDelete/BranchDeleteWorkFlow.xml</app-path>
+      </workflow>
+   </action>
+	
+</coordinator-app>

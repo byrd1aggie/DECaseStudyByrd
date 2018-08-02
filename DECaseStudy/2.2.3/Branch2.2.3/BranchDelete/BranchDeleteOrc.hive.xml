@@ -1,0 +1,14 @@
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode= nonstrict;
+CREATE TABLE IF NOT EXISTS CDW_SAPP_D_BRANCH
+(
+BRANCH_CODE string, 
+BRANCH_NAME string,
+BRANCH_STREET string,
+BRANCH_CITY string,
+BRANCH_STATE string,
+BRANCH_ZIP int,
+BRANCH_PHONE string
+)
+partitioned by (LAST_UPDATE string)
+STORED AS ORC;

@@ -1,0 +1,20 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS external_CDW_SAPP_D_CUSTOMER
+(
+CUST_SSN int,
+CUST_F_NAME string,
+CUST_M_NAME string,
+CUST_L_NAME string,
+CUST_CC_NO bigint,
+CUST_STREET string,
+CUST_CITY string,
+CUST_STATE string,
+CUST_COUNTRY string,
+CUST_ZIP int,
+CUST_PHONE string,
+CUST_EMAIL string,
+LAST_UPDATED string
+)
+row format delimited fields terminated by ','
+stored as textfile location  "/user/maria_dev/Credit_Card_System/CDW_SAPP_D_CUSTOMER_EXTERNAL/";
+LOAD DATA INPATH '/user/maria_dev/Credit_Card_System/CDW_SAPP_D_CUSTOMER/' 
+INTO table external_CDW_SAPP_D_CUSTOMER;
