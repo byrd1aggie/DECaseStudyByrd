@@ -1,0 +1,5 @@
+select sum(cdw_sapp_d_credit_card.transaction_value) as totalTransactionValue, cdw_sapp_d_time.QUARTER 
+from cdw_sapp_d_credit_card
+join cdw_sapp_d_time on (cdw_sapp_d_time.timeid = cdw_sapp_d_credit_card.timeid)
+group by QUARTER
+order by QUARTER;
